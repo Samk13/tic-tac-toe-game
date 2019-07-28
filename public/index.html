@@ -23,16 +23,11 @@
 	<title>React App</title>
 </head>
 
+
 <body>
-  <div id="errors" style="
-  background: #c00;
-  color: #fff;
-  display: none;
-  margin: -20px -20px 20px;
-  padding: 20px;
-  white-space: pre-wrap;
-"></div>
 <div id="root"></div>
+    
+
 <script>
 window.addEventListener('mousedown', function(e) {
   document.body.classList.add('mouse-navigation');
@@ -49,18 +44,7 @@ window.addEventListener('click', function(e) {
     e.preventDefault();
   }
 });
-window.onerror = function(message, source, line, col, error) {
-  var text = error ? error.stack || error : message + ' (at ' + source + ':' + line + ':' + col + ')';
-  errors.textContent += text + '\n';
-  errors.style.display = '';
-};
-console.error = (function(old) {
-  return function error() {
-    errors.textContent += Array.prototype.slice.call(arguments).join(' ') + '\n';
-    errors.style.display = '';
-    old.apply(this, arguments);
-  }
-})(console.error);
+
 </script>
 	<!--
       This HTML file is a template.
@@ -72,6 +56,17 @@ console.error = (function(old) {
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    
+  <div id="errors" style="
+  background: rgb(46, 46, 46);
+  color: rgb(0, 104, 5);
+  display: none;
+  margin: -20px -20px 20px;
+  padding: 20px;
+  white-space: pre-wrap;
+">
+</div>
 </body>
 
 </html>
