@@ -22,7 +22,7 @@ export default class Game extends React.Component {
     if (calculateWinner(squares) || squares[i]) {
       return
     }
-    squares[i] = this.state.xIsNext ? '❌' : '🔵'
+    squares[i] = this.state.xIsNext ? '\u274C' : '\uD83D\uDD35'
     this.setState({
       history: history.concat([
         {
@@ -47,7 +47,7 @@ export default class Game extends React.Component {
     const winner = calculateWinner(current.squares)
 
     const moves = history.map((step, move) => {
-      const desc = move ? 'Go to move ' + move : 'Reset 🔁'
+      const desc = move ? 'Go to move ' + move : 'Reset \uD83D\uDD04'
       return (
         <h1 key={move}>
           <button className="history-buttons" onClick={() => this.jumpTo(move)}>
@@ -61,7 +61,11 @@ export default class Game extends React.Component {
     if (winner) {
       status = 'Winner: ' + winner
     } else {
-      status = 'Next is: ' + (this.state.xIsNext ? '🐱‍👤❌' : '🐱‍💻🔵')
+      status =
+        'Next is: ' +
+        (this.state.xIsNext
+          ? '\uD83D\uDC31\u200D\uD83D\uDC64 \u274C'
+          : '\uD83D\uDC31\u200D\uD83D\uDCBB \uD83D\uDD35')
     }
 
     return (
