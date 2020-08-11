@@ -64,8 +64,8 @@ export default class Game extends React.Component {
       status =
         'Next is: ' +
         (this.state.xIsNext
-          ? '\uD83D\uDC31\u200D\uD83D\uDC64 \u274C'
-          : '\uD83D\uDC31\u200D\uD83D\uDCBB \uD83D\uDD35')
+          ? ' \u274C'
+          : ' \uD83D\uDD35')
     }
 
     return (
